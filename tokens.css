@@ -1,0 +1,103 @@
+/* ============================================================
+   Orçamento do Casal — Design Tokens
+   Trocar APENAS este arquivo muda toda a identidade do app.
+   ============================================================ */
+:root{
+  /* ---- tipografia ---- */
+  --ff-ui:"Plus Jakarta Sans",system-ui,-apple-system,sans-serif;
+  --fw-reg:400; --fw-med:500; --fw-sem:600; --fw-bold:700; --fw-xbold:800;
+
+  --fs-micro:11px; --fs-cap:12px; --fs-sm:13px; --fs-md:14px; --fs-lg:16px;
+  --fs-h3:18px; --fs-h2:22px; --fs-h1:28px; --fs-hero:clamp(36px,7vw,54px);
+  --ls-tight:-.03em; --ls-snug:-.015em; --ls-wide:.06em;
+
+  /* ---- forma ---- */
+  --r-xs:8px; --r-sm:12px; --r-md:14px; --r-lg:18px; --r-xl:22px; --r-pill:999px;
+
+  /* ---- espaço ---- */
+  --s-1:4px; --s-2:8px; --s-3:12px; --s-4:16px; --s-5:20px; --s-6:24px; --s-7:32px; --s-8:40px;
+
+  /* ---- movimento ---- */
+  --ease:cubic-bezier(.2,.7,.2,1); --dur-fast:120ms; --dur:200ms; --dur-slow:340ms;
+
+  /* ---- cores de pessoa (identidade do casal) ---- */
+  --p-a:#6B8BFF;   /* pessoa A */
+  --p-b:#FF8E6E;   /* pessoa B */
+  --p-c:#B48BFF;   /* conjunto */
+
+  /* ---- paleta de categorias (8 passos, ciclo) ---- */
+  --cat-1:#38E08B; --cat-2:#6B8BFF; --cat-3:#FF8E6E; --cat-4:#B48BFF;
+  --cat-5:#3FD2D2; --cat-6:#FFC24B; --cat-7:#FF7AA8; --cat-8:#94A0B0;
+}
+
+/* ================= DARK (padrão) ================= */
+:root,:root[data-theme="dark"]{
+  --bg:#0A0D11;
+  --bg-elev:#0F1318;
+  --surface:#14181F;
+  --surface-2:#1A1F28;
+  --surface-3:#222834;
+
+  --line:rgba(255,255,255,.07);
+  --line-2:rgba(255,255,255,.12);
+  --track:rgba(255,255,255,.08);
+
+  --ink:#F3F6F9;      /* títulos e números */
+  --text:#C5CDD8;     /* corpo */
+  --muted:#8790A0;    /* secundário */
+  --faint:#7A8495;    /* terciário */
+
+  --brand:#38E08B;
+  --brand-ink:#05140C;         /* texto sobre brand */
+  --brand-soft:rgba(56,224,139,.14);
+  --brand-line:rgba(56,224,139,.34);
+
+  --pos:#38E08B; --pos-soft:rgba(56,224,139,.14);
+  --neg:#FF6F6F; --neg-soft:rgba(255,111,111,.14);
+  --warn:#FFB13D; --warn-soft:rgba(255,177,61,.15);
+  --info:#6B8BFF; --info-soft:rgba(107,139,255,.14);
+
+  --shadow-sm:0 1px 2px rgba(0,0,0,.4);
+  --shadow-md:0 12px 28px -14px rgba(0,0,0,.8);
+  --shadow-lg:0 32px 64px -24px rgba(0,0,0,.9);
+  --glow:0 14px 30px -12px rgba(56,224,139,.45);
+  --scrim:rgba(4,6,9,.72);
+}
+
+/* ================= LIGHT ================= */
+:root[data-theme="light"]{
+  --bg:#F3F2EE;
+  --bg-elev:#FFFFFF;
+  --surface:#FFFFFF;
+  --surface-2:#F7F6F2;
+  --surface-3:#EFEDE7;
+
+  --line:rgba(14,17,22,.09);
+  --line-2:rgba(14,17,22,.14);
+  --track:rgba(14,17,22,.08);
+
+  --ink:#0E1116;
+  --text:#39414D;
+  --muted:#6B7480;
+  --faint:#5F6670;
+
+  --brand:#0E9A5A;
+  --brand-ink:#FFFFFF;
+  --brand-soft:rgba(14,154,90,.10);
+  --brand-line:rgba(14,154,90,.28);
+
+  --pos:#0E9A5A; --pos-soft:rgba(14,154,90,.11);
+  --neg:#D14343; --neg-soft:rgba(209,67,67,.10);
+  --warn:#B07400; --warn-soft:rgba(176,116,0,.12);
+  --info:#3358D4; --info-soft:rgba(51,88,212,.10);
+
+  --p-a:#3358D4; --p-b:#CC5A3A; --p-c:#7B4DD0;
+  --cat-1:#0E9A5A; --cat-2:#3358D4; --cat-3:#CC5A3A; --cat-4:#7B4DD0;
+  --cat-5:#0E8585; --cat-6:#A87400; --cat-7:#C2457A; --cat-8:#6B7480;
+
+  --shadow-sm:0 1px 2px rgba(16,22,32,.05);
+  --shadow-md:0 2px 4px rgba(16,22,32,.04),0 12px 28px -14px rgba(16,22,32,.18);
+  --shadow-lg:0 32px 64px -28px rgba(16,22,32,.28);
+  --glow:0 14px 28px -14px rgba(14,154,90,.5);
+  --scrim:rgba(20,24,30,.42);
+}

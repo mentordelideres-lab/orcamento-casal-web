@@ -4,45 +4,46 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Orçamento do Casal</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='104' fill='%23D4FF4F'/%3E%3Ctext x='256' y='312' font-family='monospace' font-size='150' font-weight='700' text-anchor='middle' fill='%230B0C0E'%3EM%26I%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#0A0D11">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='116' fill='%2338E08B'/%3E%3Cpath d='M128 196a44 44 0 0 1 44-44h132a34 34 0 0 1 34 34v18' fill='none' stroke='%2305140C' stroke-width='30' stroke-linecap='round'/%3E%3Crect x='128' y='196' width='256' height='164' rx='40' fill='none' stroke='%2305140C' stroke-width='30'/%3E%3Ccircle cx='320' cy='278' r='20' fill='%2305140C'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens.css?v=7">
+<script>try{var t=localStorage.getItem('orc-tema');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
 <style>
   *{box-sizing:border-box} html,body{margin:0}
-  :root{--bg:#0A0B0D;--card:#131519;--card2:#171A1F;--ink:#ECEEF1;--mut:#8A8F99;--line:rgba(255,255,255,.09);--acc:#D4FF4F;--neg:#FF7A7A}
   body{min-height:100vh;min-height:100dvh;display:grid;place-items:center;padding:24px;
     padding-left:max(24px,env(safe-area-inset-left));padding-right:max(24px,env(safe-area-inset-right));
-    background:var(--bg);color:var(--ink);font:400 15px/1.5 Archivo,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-    background-image:radial-gradient(60% 50% at 50% -10%,rgba(212,255,79,.10),transparent 70%),radial-gradient(40% 40% at 90% 110%,rgba(110,168,255,.07),transparent 70%)}
+    background:var(--bg);color:var(--text);font:var(--fw-reg) 15px/1.5 var(--ff-ui);-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(60% 50% at 50% -10%,var(--brand-soft),transparent 70%)}
   .wrap{width:100%;max-width:380px}
-  form{background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line);
-    border-radius:22px;padding:30px 28px 26px;box-shadow:0 40px 80px -30px rgba(0,0,0,.9),0 1px 0 rgba(255,255,255,.04) inset;position:relative;overflow:hidden}
-  form::before{content:"";position:absolute;inset:0 0 auto;height:2px;background:linear-gradient(90deg,transparent,var(--acc),transparent);opacity:.7}
-  .brand{display:flex;flex-direction:column;align-items:center;gap:12px;margin-bottom:22px}
-  .mark{width:54px;height:54px;border-radius:15px;background:var(--acc);color:#0A0B0D;
-    display:grid;place-items:center;font:700 17px/1 "IBM Plex Mono",monospace;box-shadow:0 10px 26px -8px rgba(212,255,79,.6)}
-  h1{font-size:1.28rem;font-weight:700;margin:0;text-align:center;letter-spacing:-.01em}
-  .sub{color:var(--mut);font-size:.85rem;margin:3px 0 0;text-align:center}
-  .hint{color:var(--mut);font-size:.82rem;margin:0 0 6px;text-align:center;line-height:1.45;
-    background:rgba(212,255,79,.06);border:1px solid rgba(212,255,79,.14);border-radius:10px;padding:9px 11px}
-  label{display:block;font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--mut);margin:14px 0 6px}
-  input{width:100%;background:#0B0C0E;border:1px solid var(--line);border-radius:12px;color:var(--ink);
-    font:500 1rem/1.2 Archivo,sans-serif;padding:13px 14px;outline:none;transition:border-color .15s,box-shadow .15s}
-  input::placeholder{color:#555b64}
-  input.pin{letter-spacing:.4em;text-align:center;font-family:"IBM Plex Mono",monospace}
-  input:focus{border-color:var(--acc);box-shadow:0 0 0 3px rgba(212,255,79,.18)}
-  button{width:100%;margin-top:20px;border:0;border-radius:12px;background:var(--acc);color:#0A0B0D;
-    font:700 1rem/1 Archivo,sans-serif;padding:14px;cursor:pointer;transition:transform .08s,filter .15s}
-  button:hover{filter:brightness(1.05)} button:active{transform:translateY(1px)}
+  form{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-xl);padding:30px 26px 26px;box-shadow:var(--shadow-lg)}
+  .brand{display:flex;flex-direction:column;align-items:center;gap:14px;margin-bottom:22px}
+  .mark{width:54px;height:54px;border-radius:16px;background:var(--brand);color:var(--brand-ink);display:grid;place-items:center;box-shadow:var(--glow)}
+  .mark svg{width:28px;height:28px}
+  h1{font:var(--fw-xbold) var(--fs-h2)/1.2 var(--ff-ui);letter-spacing:var(--ls-snug);margin:0;text-align:center;color:var(--ink)}
+  .sub{color:var(--muted);font-size:var(--fs-sm);margin:4px 0 0;text-align:center}
+  .hint{color:var(--text);font-size:var(--fs-sm);margin:0 0 6px;text-align:center;line-height:1.45;
+    background:var(--brand-soft);border:1px solid var(--brand-line);border-radius:var(--r-md);padding:10px 12px}
+  label{display:block;font:var(--fw-sem) var(--fs-micro)/1 var(--ff-ui);letter-spacing:var(--ls-wide);text-transform:uppercase;color:var(--muted);margin:16px 0 7px}
+  input{width:100%;height:48px;background:var(--surface-2);border:1px solid var(--line);border-radius:var(--r-md);color:var(--ink);
+    font:var(--fw-med) 16px/1.2 var(--ff-ui);padding:0 14px;outline:none;transition:border-color var(--dur-fast) var(--ease),box-shadow var(--dur-fast) var(--ease)}
+  input::placeholder{color:var(--faint)}
+  input.pin{letter-spacing:.4em;text-align:center;font-weight:var(--fw-bold)}
+  input:focus{border-color:var(--brand-line);box-shadow:0 0 0 3px var(--brand-soft)}
+  button{width:100%;height:50px;margin-top:22px;border:0;border-radius:var(--r-md);background:var(--brand);color:var(--brand-ink);
+    font:var(--fw-bold) var(--fs-lg)/1 var(--ff-ui);cursor:pointer;box-shadow:var(--glow);transition:transform var(--dur-fast) var(--ease),filter var(--dur-fast) var(--ease)}
+  button:hover{filter:brightness(1.06)} button:active{transform:scale(.985)}
   button[disabled]{opacity:.6;cursor:default}
-  .link{display:block;text-align:center;margin-top:16px;color:var(--acc);font-size:.86rem;font-weight:500;text-decoration:none;cursor:pointer}
-  .link:hover{text-decoration:underline}
-  .tip{color:var(--mut);font-size:.74rem;line-height:1.4;margin:8px 2px 0} .tip b{color:var(--ink)}
-  .err{color:var(--neg);font-weight:600;font-size:.82rem;margin-top:14px;text-align:center;
-    background:rgba(255,122,122,.08);border:1px solid rgba(255,122,122,.25);border-radius:10px;padding:9px 11px}
-  .foot{margin-top:18px;text-align:center;color:#5c626b;font-size:.72rem;display:flex;align-items:center;justify-content:center;gap:6px}
-  .foot svg{width:13px;height:13px;opacity:.8}
+  .link{display:block;text-align:center;margin-top:14px;padding:8px;color:var(--brand);font-size:var(--fs-sm);font-weight:var(--fw-sem);text-decoration:none;cursor:pointer}
+  .link:hover{color:var(--ink)}
+  .tip{color:var(--muted);font-size:var(--fs-cap);line-height:1.45;margin:8px 2px 0} .tip b{color:var(--ink)}
+  .err{color:var(--neg);font-weight:var(--fw-sem);font-size:var(--fs-sm);margin-top:14px;text-align:center;
+    background:var(--neg-soft);border:1px solid var(--neg-soft);border-radius:var(--r-md);padding:10px 12px}
+  .foot{margin-top:18px;text-align:center;color:var(--faint);font-size:var(--fs-cap);display:flex;align-items:center;justify-content:center;gap:6px}
+  .foot svg{width:13px;height:13px}
+  :focus-visible{outline:2px solid var(--brand);outline-offset:2px}
   [hidden]{display:none!important}
 </style>
 </head>
@@ -50,7 +51,7 @@
   <div class="wrap">
     <form id="f" autocomplete="on">
       <div class="brand">
-        <div class="mark">M&amp;I</div>
+        <div class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 7.5A2 2 0 0 1 5.5 5.5h12A1.5 1.5 0 0 1 19 7v1.5"/><rect x="3.5" y="7.5" width="17" height="11" rx="2.2"/><circle cx="16.3" cy="13" r="1.2" fill="currentColor" stroke="none"/></svg></div>
         <div><h1 id="title">Bem-vindos de volta</h1><p class="sub" id="sub">Entre pra ver o orçamento do casal</p></div>
       </div>
       <p class="hint" id="reghint" hidden>Primeiro acesso. Crie sua conta e um código que a outra pessoa vai usar pra entrar.</p>
