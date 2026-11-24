@@ -317,13 +317,13 @@
   var MONTHS=['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
   var MONTHS_ABBR=['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'];
   var PEOPLE={M:{code:'M',name:'Matheus'},I:{code:'I',name:'Isabella'},C:{code:'C',name:'Conjunto'}};
-  var API_ROOT='https://pggcbvafkwyqyvlkiyti.supabase.co/functions/v1/orcamento';
-  var BASE=API_ROOT;
-  var LOGIN_URL='login.html';
-  var TOKKEY='orc_token';
-  function getTok(){try{return localStorage.getItem(TOKKEY)||'';}catch(e){return '';}}
-  function afetch(u,o){o=o||{};var h={};if(o.headers){for(var k in o.headers)h[k]=o.headers[k];}var t=getTok();if(t)h['x-orc-token']=t;o.headers=h;return fetch(u,o);}
-  window.orcLogout=function(){var t=getTok();try{localStorage.removeItem(TOKKEY);}catch(e){}try{fetch(API_ROOT+'/api/logout',{method:'POST',headers:t?{'x-orc-token':t}:{}});}catch(e){}location.replace(LOGIN_URL);};
+  window.API_ROOT='https://pggcbvafkwyqyvlkiyti.supabase.co/functions/v1/orcamento';
+  window.BASE=window.API_ROOT;
+  window.LOGIN_URL='login.html';
+  window.TOKKEY='orc_token';
+  window.getTok=function(){try{return localStorage.getItem('orc_token')||'';}catch(e){return '';}};
+  window.afetch=function(u,o){o=o||{};var h={};if(o.headers){for(var k in o.headers)h[k]=o.headers[k];}var t=window.getTok();if(t)h['x-orc-token']=t;o.headers=h;return fetch(u,o);};
+  window.orcLogout=function(){var t=window.getTok();try{localStorage.removeItem('orc_token');}catch(e){}try{fetch(window.API_ROOT+'/api/logout',{method:'POST',headers:t?{'x-orc-token':t}:{}});}catch(e){}location.replace('login.html');};
   var STORAGE_KEY='orcamento-casal-v1', API=BASE+'/api/budget';
   function pad(n){return String(n).padStart(2,'0');}
   function keyOf(y,m){return y+'-'+pad(m);}
